@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Any, Dict, Optional, Literal
 
-ModuleName = Literal["hr", "finance"]
+ModuleName = Literal["hr", "finance", "legal", "marketing"]
 
 class Approval(BaseModel):
     required: bool = False

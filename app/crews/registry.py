@@ -3,6 +3,8 @@ from app.core.logging import get_logger
 from app.core.audit import log_event
 from app.crews.hr_crews import run_talent_ops, run_people_lifecycle, run_hr_compliance
 from app.crews.finance_crews import run_accounts_payable, run_accounts_receivable, run_finance_risk
+from app.crews.legal_crews import run_contract_review, run_compliance_monitoring, run_litigation_support
+from app.crews.marketing_crews import run_campaign_management, run_content_creation, run_analytics_reporting
 
 log = get_logger("registry")
 
@@ -16,6 +18,16 @@ REGISTRY = {
         "AccountsPayableCrew": run_accounts_payable,
         "AccountsReceivableCrew": run_accounts_receivable,
         "FinanceRiskCrew": run_finance_risk,
+    },
+    "legal": {
+        "ContractReviewCrew": run_contract_review,
+        "ComplianceMonitoringCrew": run_compliance_monitoring,
+        "LitigationSupportCrew": run_litigation_support,
+    },
+    "marketing": {
+        "CampaignManagementCrew": run_campaign_management,
+        "ContentCreationCrew": run_content_creation,
+        "AnalyticsReportingCrew": run_analytics_reporting,
     },
 }
 

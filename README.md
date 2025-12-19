@@ -5,6 +5,8 @@ Plug-and-play AI Agents for enterprise operations using **CrewAI + FastAPI**.
 ## Modules
 - HR: TalentOpsCrew, PeopleLifecycleCrew, HRComplianceCrew
 - Finance: AccountsPayableCrew, AccountsReceivableCrew, FinanceRiskCrew
+- Legal: ContractReviewCrew, ComplianceMonitoringCrew, LitigationSupportCrew
+- Marketing: CampaignManagementCrew, ContentCreationCrew, AnalyticsReportingCrew
 
 ## Auth (MVP)
 - Set `API_TOKEN` and call the API with `Authorization: Bearer <API_TOKEN>`.
@@ -57,6 +59,42 @@ Example payload (with approval control):
     "approved": false
   },
   "correlation_id": "demo-001"
+}
+```
+
+Example payload (legal module):
+```json
+{
+  "module": "legal",
+  "crew": "ContractReviewCrew",
+  "task": "review_contract",
+  "payload": {"contract_id": "CT-2025-001", "amount": 75000},
+  "autonomy_level": "L2",
+  "approval": {
+    "required": true,
+    "threshold": 50000,
+    "amount_field": "amount",
+    "approved": false
+  },
+  "correlation_id": "legal-demo-001"
+}
+```
+
+Example payload (marketing module):
+```json
+{
+  "module": "marketing",
+  "crew": "CampaignManagementCrew",
+  "task": "launch_campaign",
+  "payload": {"campaign_name": "Q1 Product Launch", "budget": 150000},
+  "autonomy_level": "L2",
+  "approval": {
+    "required": true,
+    "threshold": 100000,
+    "amount_field": "budget",
+    "approved": false
+  },
+  "correlation_id": "marketing-demo-001"
 }
 ```
 
