@@ -1,0 +1,4 @@
+from .marketing_manager import marketing_manager_agent
+from .campaign_management import campaign_manager_agent
+from .content_creation import content_creator_agent
+from .analytics_reporting import marketing_analyst_agent

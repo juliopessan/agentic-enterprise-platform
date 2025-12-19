@@ -1,0 +1,4 @@
+from .legal_manager import legal_manager_agent
+from .contract_review import contract_review_agent
+from .compliance_monitoring import regulatory_compliance_agent
+from .litigation_support import litigation_support_agent
